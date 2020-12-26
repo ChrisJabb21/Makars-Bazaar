@@ -1,0 +1,37 @@
+export default {
+    products: [
+        {
+            id:'1',
+            name:"Bounty Chocolate Coconut Bar",
+            category: "Snacks",
+            image:"C:\Users\chris\development\Javascript\js-amazon-clone\frontend\src\images\Bounty-Chocolate.jpg",
+            price: 4.99,
+            brand:"Bounty",
+            rating: 4.0,
+            numOfReviews:9,
+            countInStock: 40, 
+        },
+        {
+            id:'2',
+            name:"Unica Wafers",
+            category: "Snacks",
+            image:"/images/Unica-Wafers.jpg",
+            price: 11.95,
+            brand:"Gandour",
+            rating: 4.5,
+            numOfReviews:10,
+            countInStock: 55, 
+        },
+        {
+            id:'3',
+            name:"Choceur Milk Chocolate Bar Pack",
+            category: "Snacks",
+            image:"/images/Choceur-MilkChoc.jpg",
+            price: 11.95,
+            brand:"Choceur",
+            rating: 5.0,
+            numOfReviews:25,
+            countInStock: 65, 
+        },
+    ],
+};
