@@ -1,10 +1,11 @@
+
 export default {
     products: [
         {
             id:'1',
             name:"Bounty Chocolate Coconut Bar",
             category: "Snacks",
-            image:"C:\Users\chris\development\Javascript\js-amazon-clone\frontend\src\images\Bounty-Chocolate.jpg",
+            image: './images/Bounty-Chocolate.jpg',
             price: 4.99,
             brand:"Bounty",
             rating: 4.0,
@@ -13,9 +14,9 @@ export default {
         },
         {
             id:'2',
-            name:"Unica Wafers",
+            name:"Unica Wafers 24 count 28.5 oz.",
             category: "Snacks",
-            image:"/images/Unica-Wafers.jpg",
+            image:"./images/Unica-Wafers.jpg",
             price: 11.95,
             brand:"Gandour",
             rating: 4.5,
@@ -24,14 +25,25 @@ export default {
         },
         {
             id:'3',
-            name:"Choceur Milk Chocolate Bar Pack",
+            name:"Milk Chocolate 10 Bar Pack",
             category: "Snacks",
-            image:"/images/Choceur-MilkChoc.jpg",
+            image:"./images/Choceur-MilkChoc.jpg",
             price: 11.95,
             brand:"Choceur",
             rating: 5.0,
             numOfReviews:25,
             countInStock: 65, 
+        },
+        {
+            id:'4',
+            name:"French Baguette LARP Weapon",
+            category: "Accessories",
+            image:"./images/BaguetteLARPWeapon.jpg",
+            price: 45.95,
+            brand:"Nemesis",
+            rating: 4.5,
+            numOfReviews:10,
+            countInStock: 55, 
         },
     ],
 };

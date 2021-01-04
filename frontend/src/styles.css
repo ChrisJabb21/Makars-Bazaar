@@ -5,12 +5,17 @@ box-sizing: border-box;
 html{
     font-size: 62.5%;
 }
-
 body{
     height: 100vh;
     font: 1.6rem Helvetica, Arial;
     margin: 0;
 }
+h3 {
+    font-weight: bold;
+    padding: 19px;
+}
+
+
 a{
     color: black;
     text-decoration: none;
@@ -18,8 +23,6 @@ a{
 a:hover {
     color:rgb(241, 23, 23);
 }
-
-
 /*Header*/
 .grid-container{
     display: grid;
@@ -40,21 +43,17 @@ header{
     align-items: center;
     padding: 0.5rem;
 }
-
 header a {
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     
 }
-
 header a:hover {
     color:rgb(241, 23, 23);
     font-weight: bold;
     text-decoration: none;
 }
-
-
 .logo img{
     width: 100px;
     height:50px;
@@ -86,19 +85,20 @@ footer{
 
 .products li{
     flex: 0 1 30rem;
-    margin: 0.2rem;
-    margin-bottom: 0;
     height: 42rem;
-    border-top: 0.2rem #e0e0e0 solid;
+    margin: 10px;
+    padding: 19px;
+    border: 0.4rem #e0e0e0 solid;
 }
-
+.products li:hover {
+    background-color:#ffd9d7;
+}
 .product {
     display: contents;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
 }
-
 .product img {
     max-height: 26rem;
     max-width: 22rem;

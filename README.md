@@ -1,6 +1,6 @@
 # JS Ecommerce app 
 
-Ecommerce web app made with JavaScript, NodeJS, and MongoDB backend.
+Ecommerce shopping web app made with JavaScript, NodeJS, and MongoDB backend.
 
 ## Technologies used
 ---
@@ -10,7 +10,7 @@ Ecommerce web app made with JavaScript, NodeJS, and MongoDB backend.
 - MongoDB
 
 ## Project Structure 
-<p>Directory layout displayed with the <em> tree </em> in Linux and/or Windows command prompt in root project directory.</p>
+Directory layout displayed with the ``` tree ``` in Linux and/or Windows command prompt in root project directory.
 
 --- 
 ### Frontend
@@ -20,7 +20,8 @@ Ecommerce web app made with JavaScript, NodeJS, and MongoDB backend.
     └───src
         ├───images
         ├───js (for views)
-        │   └─── HomeScreen.js
+        │   ├─── HomeScreen.js
+        │   └─── ProductScreen.js
         ├─── app.js
         ├─── data.js
         ├─── index.html
