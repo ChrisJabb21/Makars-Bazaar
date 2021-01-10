@@ -1,0 +1,23 @@
+{
+  "name": "js-ecommerce-clone",
+  "version": "1.0.0",
+  "description": "A full stack ecommerce web app made with vanilla JS and nodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisJabb21/js-ecommerce-app.git"
+  },
+  "author": "Chris Jabbour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisJabb21/js-ecommerce-app/issues"
+  },
+  "homepage": "https://github.com/ChrisJabb21/js-ecommerce-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

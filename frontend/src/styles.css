@@ -71,6 +71,10 @@ footer{
     display: flex;
     justify-content: center;
 }
+footer a {
+    color:#ffffff;
+    margin: 0.5rem;
+}
 
 /* Products */
 
@@ -89,6 +93,7 @@ footer{
     margin: 10px;
     padding: 19px;
     border: 0.4rem #e0e0e0 solid;
+    display: block;
 }
 .products li:hover {
     background-color:#ffd9d7;
@@ -99,10 +104,15 @@ footer{
     justify-content: space-around;
     height: 100%;
 }
+
+
+
 .product img {
     max-height: 26rem;
     max-width: 22rem;
     margin-top: 2rem;
+    margin: 2rem;
+    align-content: center;
 }
 
 .product-name{

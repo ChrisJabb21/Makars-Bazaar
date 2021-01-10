@@ -1,4 +1,5 @@
 import { parseRequestUrl } from './utils.js';
+import Error404Screen from './views/Error404Screen.js';
 import HomeScreen from './views/HomeScreen.js';
 import ProductScreen from './views/ProductScreen.js';
 const routes = {
@@ -10,11 +11,11 @@ const routes = {
  */
 const router = () => {
     const request = parseRequestUrl();
-    const parseUrl = 
-    (request.resource ? `/${request.resource}`: '/' ) 
+    const parseUrl = (request.resource ? `/${request.resource}`: '/' ) 
     + (request.id ? '/:id': '' ) 
-    + (request.action ? `/${request.action}`: '');
-     const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+    + (request.action ? `/${request.action}` : '');
+    const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+    
     const main = document.getElementById('main-container');
     main.innerHTML = screen.render();
 };
