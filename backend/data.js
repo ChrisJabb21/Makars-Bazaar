@@ -3,7 +3,7 @@ module.exports = {
     products: [
         {
             id:'1',
-            name:"Bounty Chocolate Coconut Bar",
+            name:"Chocolate Coconut Bar",
             category: "Snacks",
             image: './images/Bounty-Chocolate.jpg',
             price: 4.99,
@@ -36,7 +36,7 @@ module.exports = {
         },
         {
             id:'4',
-            name:"French Baguette LARP Weapon",
+            name:"French Baguette",
             category: "Accessories",
             image:"./images/BaguetteLARPWeapon.jpg",
             price: 45.95,
@@ -45,5 +45,17 @@ module.exports = {
             numOfReviews:10,
             countInStock: 55, 
         },
+        /*Malachite Protection Source Pendant*/
+        {
+            id:'5',
+            name:"Malachite Protection Source Pendant",
+            category: "Accessories",
+            image:"./images/malachite-protection-source-pendant-pendants-862_1728x.jpg",
+            price: 49.99,
+            brand:"Qi Life",
+            rating: 4.5,
+            numOfReviews:10,
+            countInStock: 55, 
+        }
     ],
 };

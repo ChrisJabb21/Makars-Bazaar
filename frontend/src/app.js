@@ -9,7 +9,7 @@ const routes = {
 /**
  * router method for URL routing and shourc
  */
-const router = () => {
+const router = async () => {
     const request = parseRequestUrl();
     const parseUrl = (request.resource ? `/${request.resource}`: '/' ) 
     + (request.id ? '/:id': '' ) 
@@ -17,7 +17,7 @@ const router = () => {
     const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
     
     const main = document.getElementById('main-container');
-    main.innerHTML = screen.render();
+    main.innerHTML = await screen.render();
 };
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);

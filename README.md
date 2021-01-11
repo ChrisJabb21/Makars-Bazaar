@@ -1,6 +1,7 @@
 # JS Ecommerce app 
 
-Ecommerce shopping web app made with Vanilla JavaScript for the frontend, with NodeJS and MongoDB for the backend.
+Full-stack Ecommerce web app made with Vanilla JavaScript for the frontend, with NodeJS and MongoDB for the backend. Root direct contains package.json configuration needed to run node backend. frontend subdirectory has the package.json for running the frontend.
+
 
 ## Technologies used
 ---
@@ -8,10 +9,9 @@ Ecommerce shopping web app made with Vanilla JavaScript for the frontend, with N
 - JavaScript 
 - NodeJS
 - MongoDB
-
 --- 
-### Frontend
 
+# Frontend
 ## Project Structure 
 Directory layout displayed with the ``` tree ``` in Linux and/or Windows command prompt in root project directory.
 
@@ -30,9 +30,12 @@ Directory layout displayed with the ``` tree ``` in Linux and/or Windows command
         ├─── index.html
         └─── styles.css
 ```
-### Run Frontend Locally
-in frontend directory, run ```npm start``` to run ```live-server src --verbose``` 
----
+## Running Frontend Locally
 
-### Backend
+within frontend directory  run ```npm start``` in the terminal or command line.
+<!-- 
+### Backend 
+
+##
+-->
 

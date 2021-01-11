@@ -1,6 +1,6 @@
+/*Body */
 * {
 box-sizing: border-box;
-
 }
 html{
     font-size: 62.5%;
@@ -14,7 +14,6 @@ h3 {
     font-weight: bold;
     padding: 19px;
 }
-
 
 a{
     color: black;
@@ -54,15 +53,16 @@ header a:hover {
     font-weight: bold;
     text-decoration: none;
 }
+.logo {
+    font-size: 19px;
+}
 .logo img{
     width: 100px;
     height:50px;
 }
-
 .brand a{
     font-size: 3rem;
 }
-
 /*Footer*/
 footer{
     align-items: center;
@@ -75,7 +75,6 @@ footer a {
     color:#ffffff;
     margin: 0.5rem;
 }
-
 /* Products */
 
 .products{ 
@@ -86,7 +85,6 @@ footer a {
     margin: 0;
     justify-content: center;
 }
-
 .products li{
     flex: 0 1 30rem;
     height: 42rem;
@@ -96,6 +94,7 @@ footer a {
     display: block;
 }
 .products li:hover {
+    cursor: pointer !important;
     background-color:#ffd9d7;
 }
 .product {
@@ -104,9 +103,6 @@ footer a {
     justify-content: space-around;
     height: 100%;
 }
-
-
-
 .product img {
     max-height: 26rem;
     max-width: 22rem;
@@ -114,7 +110,6 @@ footer a {
     margin: 2rem;
     align-content: center;
 }
-
 .product-name{
     line-height: 2.2rem;
 }
