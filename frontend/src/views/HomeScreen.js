@@ -1,23 +1,21 @@
-import data from '../data.js'
+import axios from 'axios';
 const HomeScreen = {
     render: async () => {
-        const response = await fetch("http://localhost:5000/api/products",
-        {
+        const response = await axios({
+            url: "http://localhost:5000/api/products",
             headers: {
                 'Content-Type': 'application/json',
             },
         });
-        if(!response || !response.ok ){
+        if(!response || response.statusText !== 'OK' ){
             return `<div>Error in getting data</div>`;
         }
-
-        const products = await response.json();
+        const products = response.data;
 
         return `
         <h3>Products List</h3>
         <ul class="products">
             ${products.map((product) => `
-            <!--<li onclick="location.href = 'http://stackoverflow.com/questions/3486110/make-a-list-item-clickable-html-css';"> -->
             <li onclick="location.href = 'http://localhost:8080/#/product/${product.id}';">
                 <div class="product">
                     <a href="/#/product/${product.id}">
