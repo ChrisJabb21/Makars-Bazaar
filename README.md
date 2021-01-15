@@ -7,7 +7,10 @@ Root directory contains package.json configuration needed to run the node backen
 ## Technologies used
 ---
 - HTML/CSS
-- JavaScript 
+- JavaScript
+    - Webpack
+    - Babel
+    - ESlint (code linter to help find code syntax problems faster)
 - NodeJS
 - MongoDB
 --- 
@@ -17,7 +20,10 @@ Root directory contains package.json configuration needed to run the node backen
 ```
 ──root 
     ├──.gitignore
+    ├──.babelrc
+    ├──.eslintrc.js
     ├──README.md
+    ├─── package.json
     ├───backend/
     ├───frontend/
     └────node_modules/
@@ -32,13 +38,17 @@ Directory layout displayed with the ``` tree ``` in Linux and/or Windows command
     ├───node_modules
     └───src
         ├───images
-        ├───js (for views)
+        ├───components
+        │   └─── Rating.js
+        |
+        ├───views
         │   ├─── HomeScreen.js
         │   ├─── ProductScreen.js
         │   └─── Error404Screen.js
         │
-        ├─── app.js
+        ├─── index.js
         ├─── data.js
+        ├─── package.json
         ├─── index.html
         └─── styles.css
 ```

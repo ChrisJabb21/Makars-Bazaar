@@ -2,6 +2,9 @@
 * {
 box-sizing: border-box;
 }
+:root {
+    --main-color: #203040;
+}
 html{
     font-size: 62.5%;
 }
@@ -41,7 +44,11 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 0 rgba(0,0,0,.12);
+
 }
+
+
 header a {
     color: #ffffff;
     font-weight: bold;
@@ -104,10 +111,10 @@ footer a {
     height: 100%;
 }
 .product img {
-    max-height: 26rem;
+    max-height: 21rem;
     max-width: 22rem;
     margin-top: 2rem;
-    margin: 2rem;
+    padding-top: 2rem;
     align-content: center;
 }
 .product-name{
@@ -120,4 +127,17 @@ footer a {
 .product-price{
     line-height:2.5;
     font-size: 2rem;
+}
+/*Rating */
+.rating {
+    color:var(--main-color);
+    /* margin-left: -5px; */
+    font-size: 1.8rem;
+}
+.rating span:last-child{
+    font-size: 1.4rem;
+}
+.error-img img {
+    height: 400px;
+    width: 400px;
 }

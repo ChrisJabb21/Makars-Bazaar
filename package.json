@@ -4,7 +4,7 @@
   "description": "A full stack ecommerce web app made with vanilla JS and nodeJS.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/server.js -e ejs,js,css,html,jpg,png,scss",
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,16 @@
   "homepage": "https://github.com/ChrisJabb21/js-ecommerce-app#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.7"
   }
 }
