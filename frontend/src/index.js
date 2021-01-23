@@ -8,7 +8,8 @@ const routes = {
   '/product/:id': ProductScreen,
 };
 /**
- * router method for URL routing and shourc
+ * router method for URL routing and parsing
+ * @exception return 404 error page if URL does dont exist in routes.
  */
 const router = async () => {
   const request = parseRequestUrl();
@@ -16,7 +17,6 @@ const router = async () => {
     + (request.id ? '/:id' : '')
     + (request.action ? `/${request.action}` : '');
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
-
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
 };

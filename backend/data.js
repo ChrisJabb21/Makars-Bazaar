@@ -52,7 +52,7 @@ export default {
       image: './images/malachite-protection-source-pendant-pendants-862_1728x.jpg',
       price: 49.99,
       brand: 'Qi Life',
-      rating: 3.5,
+      rating: 3.0,
       numOfReviews: 10,
       countInStock: 55,
     },

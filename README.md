@@ -11,6 +11,7 @@ Root directory contains package.json configuration needed to run the node backen
     - Webpack
     - Babel
     - ESlint (code linter to help find code syntax problems faster)
+    - Prettier 
 - NodeJS
 - MongoDB
 --- 

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Rating from '../components/Rating';
 
+/** view for displaying all products to browse */
 const HomeScreen = {
   render: async () => {
     const response = await axios({
@@ -18,7 +19,7 @@ const HomeScreen = {
         <h3>Products List</h3>
         <ul class="products">
             ${products.map((product) => `
-            <li onclick="location.href = 'http://localhost:8080/#/product/${product.id}';">
+            <li onclick="location.href = 'http://localhost:9000/#/product/${product.id}';">
                 <div class="product">
                     <a href="/#/product/${product.id}">
                         <img src="${product.image}" alt="${product.name}" />
@@ -38,6 +39,9 @@ const HomeScreen = {
                 </div>
                     <div class="product-price">
                     $${product.price}
+                </div>
+                <div>
+                <button id="add-button" class="btn btn-primary">Add to Cart</div>
                 </div>
                 </div>
             </li>
