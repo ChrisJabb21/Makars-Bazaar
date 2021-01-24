@@ -66,7 +66,7 @@ a{
     text-decoration: none;
 }
 a:hover {
-    color:rgb(241, 23, 23);
+    color:var(--main-color);
 }
 .grid-container{
     display: grid;
@@ -129,9 +129,10 @@ header a {
 
 
 header a:hover {
-    color:rgb(241, 23, 23);
+    color:white;
     font-weight: bold;
     text-decoration: none;
+    border: 1px solid #d0d0d0;
 }
 .logo {
     font-size: 19px;
@@ -155,6 +156,10 @@ footer{
 
 }
 footer a {
+    color:#ffffff;
+    margin: 0.5rem;
+}
+footer a:hover {
     color:#ffffff;
     margin: 0.5rem;
 }
@@ -204,6 +209,14 @@ footer a {
     line-height:2.5;
     font-size: 2rem;
 }
+
+button.disabled {
+    /* color:#ffffff;
+    background-color: red; */
+    cursor: no-drop !important;
+  }
+
+
 /*Rating */
 .rating {
     color:var(--main-color);
@@ -231,7 +244,7 @@ display: flex;
 justify-content: space-between;
 align-items: flex-start;
 flex-wrap: wrap;
-margin: 15px;
+/* margin: 15px; */
 }
 
 .details-image {
@@ -267,4 +280,10 @@ margin: 15px;
     border-radius :0.5rem;
     background-color: #f8f8f8;
     padding: 1rem;
+}
+.success{
+    color: #40c040;
+}
+.error{
+    color: red;   
 }

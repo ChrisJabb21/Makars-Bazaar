@@ -3,6 +3,15 @@ import { getProduct } from "../ProductService";
 import { parseRequestUrl } from "../utils";
 
 const ProductScreen = {
+  after_render: () => {
+    const request = parseRequestUrl();
+    document.getElementById('add-button').addEventListener('click',
+    ()=> {
+      document.location.hash = `/cart/${request.id}`;
+    }
+    );
+  },
+
   render: async () => {
     const request = parseRequestUrl();
     const product = await getProduct(request.id);
@@ -55,7 +64,12 @@ const ProductScreen = {
               }
             </li>
             <li>
-                <button id="add-button" class="btn btn-primary">Add to Cart</div>
+
+            ${
+              product.countInStock > 0 
+              ? `<button onclick="location.href='http://localhost:9000/#/cart/${product.id}';" type="button" id="add-button" class="btn btn-primary"> Add to Cart</div>`
+              : `<button class="btn-danger disabled" type="button" disabled>Product Unavailable</button>`      
+            }
             </li>
           </ul>
         </div>

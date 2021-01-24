@@ -41,7 +41,10 @@ const HomeScreen = {
                     $${product.price}
                 </div>
                 <div>
-                <button id="add-button" class="btn btn-primary">Add to Cart</div>
+                <div>
+                <button onclick="location.href='http://localhost:9000/#/product/${product.id}';" type="button" id="add-button" class="btn btn-primary"> View Product </button></div>
+                </div>
+                </div>
                 </div>
                 </div>
             </li>

@@ -9,7 +9,7 @@ export default {
       brand: 'Bounty',
       rating: 3.5,
       numOfReviews: 9,
-      countInStock: 40,
+      countInStock: 0,
     },
     {
       id: '2',
