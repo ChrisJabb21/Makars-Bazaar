@@ -53,6 +53,7 @@ body{
 }
 h1{
     font-weight: bold;
+    padding:19px;
 }
 
 
@@ -251,13 +252,27 @@ button.disabled {
 /*404 Error image */
 .error-img img {
     height: 400px;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
 }
 .error {
     margin-bottom: 30px;
 
 }
+.back-button {
+    margin-top: 19px;
+    max-height: 50px;
+    min-height: 50px;
+    min-width: 100px;
+    max-width: 25%;
+    color: white;
+  border-color: var(--main-color) solid;
+}
+.back-button:hover{
+  color: white;
+  border-color: var(--main-color) solid;
 
+}
 
 /*Product details*/
 

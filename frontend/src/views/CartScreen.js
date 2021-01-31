@@ -20,17 +20,34 @@ const addToCart = (item, forceUpdate = false) => {
     }
 };
 
+const removeFromCart = (id) => {
+    setCartItems(getCartItems().filter(x => x.product !== id));
+    if(id === parseRequestUrl().id) {
+        document.location.hash = '/cart';   
+    } else {
+        rerender(CartScreen);
+    }
+};
+
 const CartScreen = {
     after_render: () => {
         const qtySelects = document.getElementsByClassName("qty-select");
         Array.from(qtySelects).forEach((qtySelect) => {
-            qtySelects.addEventListener('change', (e) => {
+            qtySelect.addEventListener('change', (e) => {
                 const item = getCartItems().find((x) => x.product === qtySelect.id);
-                addToCart({ ...item, qty: Number(e.target.value) }, false)
+                addToCart({ ...item, qty: Number(e.target.value) }, true)
             });
+        });
+        const deleteFromCart = document.getElementsByClassName("delete-button");
+        Array.from(deleteFromCart).forEach(deleteButton => {
+            deleteButton.addEventListener('click', () => {
+                removeFromCart(deleteButton.id);
+            });
+        });
+        document.getElementById("checkout-button").addEventListener("click", () =>{
+            document.location.hash = '/signin';
         })
     },
-
     render: async () => {
         const request = parseRequestUrl();
         if (request.id) {
@@ -40,23 +57,23 @@ const CartScreen = {
                 name: product.name,
                 image: product.image,
                 price: Number(product.price).toFixed(2),
-                inStock: product.inStock,
+                countInStock: product.countInStock,
                 qty: 1,
             })
         }
         const cartItems = getCartItems();
         return `
-    <h2>Shopping Cart</h2>
-    <div>${getCartItems().length}</div>
+    <button onclick="location.href ='/#/'" type="button" class="back-button btn"><span> <i class="fas fa-arrow-circle-left"></i> <span>Back to browse </button>
+    <h1>Shopping Cart</h1>
     <div class="content cart">
         <div class="cart-list">
             <ul class="cart-list-container"> 
             <li>
-                <h3>Shopping Cart</h3>
+                <div>Product</div>
                 <div>Price</div>
             </li>
             ${cartItems.length === 0 ?
-                '<div>Cart is empty.<a href="/#/">Go shopping</a>' :
+                '<div>Cart is empty.<a href="/#/"> Click here to shop</a>' :
                 cartItems.map(item => `
                 <li>
                    <div class="cart-image">
@@ -69,8 +86,15 @@ const CartScreen = {
                         </a>
                    </div>
                    <div> 
-                   Qty: <select class= "qty-select" id="${item.product}">
-                   <option value ="1">1</option>
+                   Qty: <select class="qty-select" id="${item.product}">
+                   ${
+                        [...Array(item.countInStock).keys()].map(x => 
+                        item.qty === x + 1 
+                        ? `<option selected value ="${x+1}">${x+1}</option>`
+                        : `<option value ="${x+1}">${x+1}</option>`
+                        )
+                    }
+
                    </select>
                    <button type="button" class=" btn-danger delete-button" id="${item.product}">
                    Delete
@@ -91,7 +115,7 @@ const CartScreen = {
                 :
                 $${cartItems.reduce((a, c) => a + Number(c.price).toFixed(2) * c.qty, 0)}
                 </h3>
-                <button class="btn btn-primary">
+                <button class="btn btn-success" id="checkout-button">
                     Proceed to Checkout
                 </button>
       

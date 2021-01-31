@@ -13,11 +13,11 @@ const Error404Screen = {
         <h1 style="font-size:50px">404</h1>
         <h2>This Page is Not Real!</h2>
         <!-- Illustration from https://www.kapwing.com/404-illustrations--!>
-
+        
         <div class="error-img">
         <img src="./images/error404.png"></img>
         </div>
-        <button class="btn btn-primary error"><a href="#"> Click here to Return to home<a/></button></div>
+        <button class="btn btn-primary error" onclick="location.href = '#';"><a href="#"> Click here to Return to home<a/></button></div>
         `;
   },
 };

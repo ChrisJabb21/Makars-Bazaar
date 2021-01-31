@@ -17,7 +17,7 @@ const HomeScreen = {
     const products = response.data;
 
     return `
-        <h3>Products List</h3>
+        <h1>Products</h1>
         <ul class="products">
             ${products.map((product) => `
             <li onclick="location.href = '${clientUrl}#/product/${product.id}';">
