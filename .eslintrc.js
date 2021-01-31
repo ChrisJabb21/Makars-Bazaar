@@ -16,5 +16,6 @@ module.exports = {
     'next-line indent': 0,
     indent: 0,
     'import/prefer-default-export': 0,
+    'no-use-before-define': 0
   },
 };

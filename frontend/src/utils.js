@@ -1,9 +1,11 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/prefer-default-export */
 /**
- * Method to get and analyze a Request URL.
- * finds url based on current path (document.location).
- * format the url string an array of string.
+ *  utility functions module for routing functionality
+ */
+
+/**
+ * Method to get and analyze a Request URL and
+ * find the url based on current path (document.location).
+ * format the url as an array of string.
  * @returns the resource, resource id, and action in specified array position.
  * ['', "resource", "id", "action"]
  * */
@@ -15,4 +17,11 @@ export const parseRequestUrl = () => {
     id: request[2],
     action: request[3],
   };
+};
+
+export const rerender = async (component) => {
+  document.getElementById(
+    "main-container"
+    ).innerHTML = await component.render();
+    await component.after_render();
 };

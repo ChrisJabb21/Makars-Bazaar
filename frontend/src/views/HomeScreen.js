@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { clientUrl } from '../config';
 import Rating from '../components/Rating';
 
 /** view for displaying all products to browse */
@@ -19,7 +20,7 @@ const HomeScreen = {
         <h3>Products List</h3>
         <ul class="products">
             ${products.map((product) => `
-            <li onclick="location.href = 'http://localhost:9000/#/product/${product.id}';">
+            <li onclick="location.href = '${clientUrl}#/product/${product.id}';">
                 <div class="product">
                     <a href="/#/product/${product.id}">
                         <img src="${product.image}" alt="${product.name}" />
@@ -42,7 +43,7 @@ const HomeScreen = {
                 </div>
                 <div>
                 <div>
-                <button onclick="location.href='http://localhost:9000/#/product/${product.id}';" type="button" id="add-button" class="btn btn-primary"> View Product </button></div>
+                <button onclick="location.href='${clientUrl}/#/product/${product.id}';" type="button" id="add-button" class="btn btn-primary"> View Product </button></div>
                 </div>
                 </div>
                 </div>

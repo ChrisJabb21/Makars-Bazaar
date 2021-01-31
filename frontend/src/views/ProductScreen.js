@@ -1,6 +1,7 @@
 import Rating from "../components/Rating";
 import { getProduct } from "../ProductService";
 import { parseRequestUrl } from "../utils";
+import { clientUrl } from '../config';
 
 const ProductScreen = {
   after_render: () => {
@@ -22,7 +23,7 @@ const ProductScreen = {
     <div class="content">
       <div class="back-to-result">
         <br>
-        <a href="/#/"> <span> <i class="fas fa-arrow-circle-left"></i> <span>Back to browse</a>
+        <a href="/#/"> <button onclick="location.href ='/#/'" type="button" class="btn btn-primary"><span> <i class="fas fa-arrow-circle-left"></i> <span>Back to browse</a></button>
       </div>
       <div class="details">
         <div class="details-image">
@@ -67,7 +68,7 @@ const ProductScreen = {
 
             ${
               product.countInStock > 0 
-              ? `<button onclick="location.href='http://localhost:9000/#/cart/${product.id}';" type="button" id="add-button" class="btn btn-primary"> Add to Cart</div>`
+              ? `<button onclick="location.href='${clientUrl}/#/cart/${product.id}';" type="button" id="add-button" class="btn btn-primary"> Add to Cart</div>`
               : `<button class="btn-danger disabled" type="button" disabled>Product Unavailable</button>`      
             }
             </li>
