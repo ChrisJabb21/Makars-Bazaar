@@ -82,22 +82,26 @@ a:hover {
 
 /*Button*/
 button{
+    cursor:pointer;
+}
+button, input{
     font: 2.5rem helvetica;
-    font-size: 16px !important;
+    font-size: 12px !important;
     padding: 1rem;
     border: 0.1rem gray solid;
     border-radius: 0.5rem;
-    cursor: pointer;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
+
+}
+button:hover, input:hover{
+    /* border: 0.1rem #404040 solid; */
 
 }
 
-  
 
-button:hover{
-    border: 0.1rem #404040 solid;
-}
+
+
 .btn{
     background-color: var(--main-color);
     color: white;
@@ -399,4 +403,45 @@ flex-wrap: wrap;
     padding: 0.5rem;
 }
 
+/* Form  */
+form{
+    border-radius: 0.5rem;
+    border: 0.1rem #c0c0c0 solid;
+    box-shadow: 5px 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 0 rgba(0,0,0,.12);
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;    
+}
+.form-container button{
+    width: 100%;
+    height: 4rem;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+
+.form-items li {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.form-items h1 {
+    font-size: 2.5rem;
+}
+.form-items div{
+    text-align: center;
+}
 

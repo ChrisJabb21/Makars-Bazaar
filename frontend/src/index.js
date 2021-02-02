@@ -3,13 +3,14 @@ import CartScreen from './views/CartScreen';
 import Error404Screen from './views/Error404Screen';
 import HomeScreen from './views/HomeScreen';
 import ProductScreen from './views/ProductScreen';
+import SigninScreen from './views/SigninScreen';
 
 const routes = {
   '/': HomeScreen,
   '/product/:id': ProductScreen,
   '/cart/:id': CartScreen,
-  '/cart': CartScreen
-
+  '/cart': CartScreen,
+  '/signin': SigninScreen
 };
 /**
  * router method for URL routing and parsing
