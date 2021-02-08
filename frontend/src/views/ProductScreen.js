@@ -1,5 +1,5 @@
 import Rating from "../components/Rating";
-import { getProduct } from "../ProductService";
+import { getProduct } from "../productService";
 import { parseRequestUrl } from "../utils";
 import { clientUrl } from '../config';
 
@@ -68,7 +68,7 @@ const ProductScreen = {
 
             ${
               product.countInStock > 0 
-              ? `<button onclick="location.href='${clientUrl}/#/cart/${product.id}';" type="button" id="add-button" class="btn btn-primary"> Add to Cart</div>`
+              ? `<button onclick="location.href='${clientUrl}/#/cart/${product.id}';" type="button" id="add-button" class="btn btn-success"> Add to Cart</div>`
               : `<button class="btn-danger disabled" type="button" disabled>Product Unavailable</button>`      
             }
             </li>

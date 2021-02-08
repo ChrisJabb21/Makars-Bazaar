@@ -246,7 +246,6 @@ button.disabled {
 /*Rating */
 .rating {
     color:var(--main-color);
-    /* margin-left: -5px; */
     font-size: 1.3rem;
 }
 .rating span:last-child{
@@ -343,7 +342,6 @@ flex-wrap: wrap;
 
 .cart button {
     width: 100%;
-    margin: 1rem;
 }
 
 .cart-list {
@@ -392,6 +390,9 @@ flex-wrap: wrap;
 .cart-name > div {
     padding: 1rem;
 
+}
+.qty-select{
+    margin:1rem;
 }
 .cart-list h3{
     margin: 0;
