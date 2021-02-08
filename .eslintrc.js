@@ -14,8 +14,9 @@ module.exports = {
     'no-console': 0,
     'no-nested-ternary': 0,
     'next-line indent': 0,
-    indent: 0,
+    'indent': 0,
     'import/prefer-default-export': 0,
-    'no-use-before-define': 0
+    'no-use-before-define': 0,
+    'no-unused-vars': 0
   },
 };
