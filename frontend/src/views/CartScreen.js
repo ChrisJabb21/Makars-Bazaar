@@ -63,7 +63,7 @@ const CartScreen = {
         }
         const cartItems = getCartItems();
         return `
-    <button onclick="location.href ='/#/'" type="button" class="back-button btn-primary btn"><span> <i class="fas fa-arrow-circle-left"></i> <span>Back to browse </button>
+    <button onclick="location.href ='/#/'" type="button" class="cart-browse-btn back-button btn-primary btn"><span> <i class="fas fa-arrow-circle-left"></i> <span>Back to browse </button>
     <h1>Shopping Cart</h1>
     <div class="content cart">
         <div class="cart-list">

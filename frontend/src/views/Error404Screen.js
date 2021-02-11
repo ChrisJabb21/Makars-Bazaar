@@ -1,13 +1,17 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable arrow-body-style */
+import { hideLoading, showLoading } from "../utils";
 /**
  * Screen view that invokes a
  * function that renders a 404 response
  * if a URL route entered to parse for is not found.
  * @returns HTML markup with the error message not found
  */
-const Error404Screen = {
+const Error404Screen = {    
+
+  before_render: () => {
+    showLoading();
+  },
   render: () => {
+    hideLoading();
     return `
         <div style="text-align:center; margin-top:30px">
         <h1 style="font-size:50px">404</h1>

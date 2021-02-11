@@ -1,4 +1,82 @@
- .navbar{
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-color);
+    min-width: 20px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color:white;
+    border-color: transparent;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+  }
+  
+  .dropdown-content a:hover {background-color: #203040;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+/*Header*/
+header{
+    width: 100%;
+    grid-area: header;
+    background-color: var(--main-color);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 0 rgba(0,0,0,.12);
+    margin: 0%;
+}
+
+header a {
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.9rem 0.7rem;
+}
+
+header a:hover {
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #d0d0d0;
+}
+.logo {
+    font-size: 19px;
+    float: left;
+}
+.logo img{
+    width: 100px;
+    height:50px;
+}
+.brand a{
+    font-size: 3rem;
+}
+.navbar{
     width: 100%;
     font-family: 'Segoe Ui';
     background-color: var(--main-color);
@@ -32,8 +110,6 @@
     cursor: pointer;
     border-radius: 3px;
 } 
-
-
 
 /*Body */
 * {
@@ -91,15 +167,7 @@ button, input{
     border: 0.1rem gray solid;
     border-radius: 0.5rem;
     width: 100%;
-    /* text-align: center; */
-
 }
-button:hover, input:hover{
-    /* border: 0.1rem #404040 solid; */
-
-}
-
-
 
 
 .btn{
@@ -120,47 +188,6 @@ button:hover, input:hover{
     padding:-5px;
 }
 
-/*Header*/
-header{
-    width: 100%;
-    grid-area: header;
-    background-color: var(--main-color);
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 0 rgba(0,0,0,.12);
-    margin: 0%;
-}
-
-header a {
-    color: #ffffff;
-    display: inline-block;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0.9rem 0.7rem;
-    
-}
-
-
-header a:hover {
-    color:white;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid #d0d0d0;
-}
-.logo {
-    font-size: 19px;
-    float: left;
-}
-.logo img{
-    width: 100px;
-    height:50px;
-}
-.brand a{
-    font-size: 3rem;
-}
 /*Footer*/
 footer{
     align-items: center;
@@ -168,7 +195,8 @@ footer{
     color: #ffffff;
     display: flex;
     justify-content: center;
-    box-shadow: 0 3px 5px 3px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 5px rgba(0,0,0,.12),  0 3px 15px 10px rgba(0,0,0,.12),  0 10px 15px 10px rgba(0,0,0,.12);
+    box-shadow: 0 3px 5px 3px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 
+    0 3px 15px 5px rgba(0,0,0,.12),  0 3px 15px 10px rgba(0,0,0,.12),  0 10px 15px 10px rgba(0,0,0,.12);
 
 }
 footer a {
@@ -288,7 +316,6 @@ display: flex;
 justify-content: space-between;
 align-items: flex-start;
 flex-wrap: wrap;
-/* margin: 15px; */
 }
 
 .details-image {
@@ -339,6 +366,9 @@ flex-wrap: wrap;
     align-items: flex-start;
     align-content: center;
 }
+.cart-browse-btn {
+    margin-left: 15px;
+}
 
 .cart button {
     width: 100%;
@@ -374,10 +404,10 @@ flex-wrap: wrap;
     text-align: right;
 }
 
+
 .cart-list-container img {
     max-width: 10rem;
     max-height: 10rem;
-    /* padding: 1rem; */
 }
 
 .cart-action{
@@ -404,18 +434,23 @@ flex-wrap: wrap;
     padding: 0.5rem;
 }
 
+
+
+
 /* Form  */
 form{
     border-radius: 0.5rem;
     border: 0.1rem #c0c0c0 solid;
-    box-shadow: 5px 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 0 rgba(0,0,0,.12);
+    box-shadow: 5px 3px 5px -1px rgba(0,0,0,.2), 
+    0 6px 10px 0 rgba(0,0,0,.14), 0 3px 15px 0 rgba(0,0,0,.12);
 }
 
 .form-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;    
+    height: 90%;
+    margin: 2.4rem;   
 }
 .form-container button{
     width: 100%;
@@ -446,3 +481,51 @@ form{
     text-align: center;
 }
 
+#register-form {
+margin: 3rem;
+}
+
+/* Message Overlay */
+
+.overlay {
+
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 16, 16, 0.50);
+}
+.overlay.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.overlay.active p{
+    margin-top: 45px;
+    margin-left: -135px;
+    position: relative;
+    color: black;
+}
+
+.overlay > div {
+    background-color: white;
+    color: #000000;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 40rem;
+    width: 100%;
+    text-align: center;
+
+}
+
+.overlay > div > * {
+  margin: 2rem;
+  width: 89%;
+}
