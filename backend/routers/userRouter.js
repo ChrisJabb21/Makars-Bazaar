@@ -1,7 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import User from '../models/userModel';
-import { generateToken } from '../util';
+import { generateToken, isAuth } from '../util';
 
 const userRouter = express.Router();
 userRouter.get("/createadmin", 
@@ -10,7 +10,6 @@ expressAsyncHandler(async(req, res) => {
         const user = new User({
             firstname:'Arnold',
             lastname: 'Schwartznegger',
-            username:'admin',
             email: 'admin@makars.com',
             password:'M4k4r123',
             isAdmin: true,
@@ -37,7 +36,6 @@ expressAsyncHandler(async (req,res)  => {
             id: signinUser.id,
             firstname: signinUser.firstname,
             lastname: signinUser.lastname,
-            username: signinUser.username,
             email: signinUser.email,
             password: signinUser.password,
             isAdmin: signinUser.isAdmin,
@@ -49,4 +47,54 @@ expressAsyncHandler(async (req,res)  => {
 
 }));
 
+userRouter.post('/register', 
+expressAsyncHandler(async (req,res)  => {
+    const user = new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: req.body.password,
+    });
+    const createdUser = await user.save();
+    if(!createdUser){
+        res.status(401).send({
+            message: 'Invalid user data!',
+        });
+    } else {
+        res.send({
+            id: createdUser.id,
+            firstname: createdUser.firstname,
+            lastname: createdUser.lastname,
+            email: createdUser.email,
+            password: createdUser.password,
+            isAdmin: createdUser.isAdmin,
+            token: generateToken(createdUser),
+        });
+    }
+}));
+
+userRouter.put('/:id', isAuth,
+expressAsyncHandler(async (req,res)  => {
+   const user = await User.findById(req.params.id);
+    if(!user){
+        res.status(404).send({
+            message: 'User does not exist',
+        });
+    } else {
+        user.firstname = req.body.firstname || user.firstname;
+        user.lastname = req.body.lastname || user.lastname;
+        user.email = req.body.email || user.email;
+        user.password = req.body.password || user.password;
+        const updatedUser = await user.save();
+        res.send({
+            id: updatedUser.id,
+            firstname: updatedUser.firstname,
+            lastname: updatedUser.lastname,
+            email: updatedUser.email,
+            password: updatedUser.password,
+            isAdmin: updatedUser.isAdmin,
+            token: generateToken(updatedUser),
+        });
+    }
+}));
 export default userRouter;
