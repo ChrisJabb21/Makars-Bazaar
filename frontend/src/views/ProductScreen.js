@@ -6,11 +6,14 @@ import { clientUrl } from '../config';
 const ProductScreen = {
   after_render: () => {
     const request = parseRequestUrl();
-    document.getElementById('add-button').addEventListener('click',
+    const addToCart = document.getElementById('add-button');
+    if(addToCart){
+    addToCart.addEventListener('click',
     ()=> {
       document.location.hash = `/cart/${request.id}`;
     }
     );
+  }
   },
 
   render: async () => {
@@ -63,7 +66,7 @@ const ProductScreen = {
                 ${
                   product.countInStock > 0 
                   ? `<span class="success">In Stock</span>`
-                  : `<span class="error">Unavailable</span>`
+                  : `<span class="error">Currently Unavailable</span>`
               }
             </li>
             <li>

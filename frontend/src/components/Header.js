@@ -10,13 +10,17 @@ const Header = {
 </div>
     <div>
         <div class="dropdown">
-    <a>Profile <i class="fas fa-user" style="font-size:12px"></i></a>
+        ${ 
+            firstname 
+            ? `<a href="/#/profile"> Welcome ${firstname}! <i class="fas fa-user" style="font-size:12px"></i> </a>` : 
+            `<a href="/#/signin"> Sign-In <i class="fas fa-user" style="font-size:12px"></i></a>`
+            }
     <div class="dropdown-content">
-    <a href="/#/register"> Register <i class="fas fa-user" style="font-size:12px"></i> </a> 
+  
     ${ 
     firstname 
-    ? `<a href="/#/profile"> Hey ${firstname} <i class="fas fa-user" style="font-size:12px"></i> </a>` : 
-    `<a href="/#/signin"> Sign-In <i class="fas fa-user" style="font-size:12px"></i></a>`
+    ? `` 
+    : `<a href="/#/register"> Register <i class="fas fa-user" style="font-size:12px"></i></a>`
     }
         </div>
     </div>
@@ -27,6 +31,7 @@ const Header = {
         <i class="fas fa-bars"></i>
     </Button> -->`;
     },
-    after_render: () => {},
+     after_render: () => {
+},
 };
 export default Header;

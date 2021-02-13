@@ -6,6 +6,7 @@ import HomeScreen from './views/HomeScreen';
 import ProductScreen from './views/ProductScreen';
 import SigninScreen from './views/SigninScreen';
 import RegisterScreen from './views/RegisterScreen';
+import ProfileScreen from './views/ProfileScreen';
 
 
 const routes = {
@@ -14,7 +15,8 @@ const routes = {
   '/cart/:id': CartScreen,
   '/cart': CartScreen,
   '/signin': SigninScreen,
-  '/register': RegisterScreen
+  '/register': RegisterScreen,
+  '/profile': ProfileScreen
 };
 /**
  * router method for URL routing and parsing
@@ -32,7 +34,7 @@ const router = async () => {
   await Header.after_render();
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
-  await screen.after_render();
+  if(screen.after_render) await screen.after_render();
   hideLoading();
 };
 window.addEventListener('load', router);
