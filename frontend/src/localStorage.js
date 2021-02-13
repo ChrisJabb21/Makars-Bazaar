@@ -1,3 +1,8 @@
+
+export const clearUser = () => {
+    localStorage.removeItem('userInfo');
+}
+
 export const getCartItems = () => {
     const cartItems = localStorage.getItem('cartItems') ?
     JSON.parse(localStorage.getItem('cartItems')) 
@@ -36,4 +41,4 @@ export const setUserInfo = ({
 export const getUserInfo = () => 
     localStorage.getItem('userInfo') 
     ? JSON.parse(localStorage.getItem('userInfo'))
-    : {email: '', password: '', username:'', firstname:''};
+    : {email: '', password: '', firstname:'', lastname:''};
