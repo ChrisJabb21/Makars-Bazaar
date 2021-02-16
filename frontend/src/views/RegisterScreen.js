@@ -1,6 +1,6 @@
 import { getUserInfo, setUserInfo } from "../localStorage";
 import { register } from "../userService";
-import { hideLoading, showLoading, showMessage } from "../utils";
+import { hideLoading, redirectUser, showLoading, showMessage } from "../utils";
 
 const RegisterScreen = {
   after_render: () => {
@@ -20,14 +20,14 @@ const RegisterScreen = {
             showMessage(data.error);
         } else {
             setUserInfo(data);
-            document.location.hash = '/'; 
+            redirectUser(); 
         }
     });
   },
   render: () => {
         if(getUserInfo().email)
         {
-            document.location.hash = '/';
+            redirectUser();
         }
     return `
         <div class="form-container">

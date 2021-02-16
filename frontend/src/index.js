@@ -7,6 +7,8 @@ import ProductScreen from './views/ProductScreen';
 import SigninScreen from './views/SigninScreen';
 import RegisterScreen from './views/RegisterScreen';
 import ProfileScreen from './views/ProfileScreen';
+import ShippingScreen from './views/ShippingScreen';
+import PaymentScreen from './views/PaymentScreen';
 
 
 const routes = {
@@ -16,11 +18,13 @@ const routes = {
   '/cart': CartScreen,
   '/signin': SigninScreen,
   '/register': RegisterScreen,
-  '/profile': ProfileScreen
+  '/profile': ProfileScreen,
+  '/shipping': ShippingScreen,
+  '/payment': PaymentScreen,
 };
 /**
  * router method for URL routing and parsing
- * @exception return 404 error page if URL does dont exist in routes.
+ * @exception return 404 error page screen if URL does dont exist in routes.
  */
 const router = async () => {
   showLoading();

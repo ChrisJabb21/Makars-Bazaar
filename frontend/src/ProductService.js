@@ -5,9 +5,9 @@ export const getProduct = async (id) => {
   try {
     const response = await axios({
       url: `${apiUrl}/api/products/${id}`,
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     if (response.statusText !== 'OK') {
@@ -16,6 +16,6 @@ export const getProduct = async (id) => {
     return response.data;
   } catch (err) {
     console.log(err);
-    return { error: err.response.data.message || err.message};
+    return { error: err.response.data.message || err.message };
   }
 };

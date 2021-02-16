@@ -17,6 +17,7 @@ module.exports = {
     'indent': 0,
     'import/prefer-default-export': 0,
     'no-use-before-define': 0,
-    'no-unused-vars': 0
+    'no-unused-vars': 0,
+    'arrow-body-style': 0 
   },
 };
