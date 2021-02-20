@@ -9,6 +9,7 @@ import RegisterScreen from './views/RegisterScreen';
 import ProfileScreen from './views/ProfileScreen';
 import ShippingScreen from './views/ShippingScreen';
 import PaymentScreen from './views/PaymentScreen';
+import PlaceOrderScreen from './views/PlaceOrderScreen';
 
 
 const routes = {
@@ -21,6 +22,7 @@ const routes = {
   '/profile': ProfileScreen,
   '/shipping': ShippingScreen,
   '/payment': PaymentScreen,
+  '/placeorder': PlaceOrderScreen
 };
 /**
  * router method for URL routing and parsing

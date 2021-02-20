@@ -35,7 +35,7 @@ const PaymentScreen = {
                     <input type="radio"
                     name="payment-method" 
                     id="paypal" 
-                    value="Paypal" 
+                    value="PayPal" 
                     checked />
                     <label for="paypal">PayPal</label>
                     </div>

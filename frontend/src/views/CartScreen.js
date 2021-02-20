@@ -1,6 +1,6 @@
-import { getCartItems, setCartItems } from "../localStorage";
+import { getCartItems, setCartItems,  } from "../localStorage";
 import { getProduct } from "../productService";
-import { parseRequestUrl, rerender } from "../utils";
+import { parseRequestUrl, rerender, formatter } from "../utils";
 
 const addToCart = (item, forceUpdate = false) => {
     let cartItems = getCartItems();
@@ -48,6 +48,9 @@ const CartScreen = {
             document.location.hash = '/signin';
         })
     },
+
+
+    
     render: async () => {
         const request = parseRequestUrl();
         if (request.id) {
@@ -122,6 +125,7 @@ const CartScreen = {
             </div>
         </div>
         `;
+
     }
 };
 

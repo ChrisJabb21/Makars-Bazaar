@@ -1,3 +1,5 @@
+
+
 export const clearUser = () => {
   localStorage.removeItem("userInfo");
 };
@@ -68,5 +70,5 @@ export const getPayment = () => {
     return payment;
   };
   export const setPayment = ({ paymentMethod = 'paypal' }) => {
-    localStorage.setItem('payment',JSON.stringify({ paymentMethod }));
+    localStorage.setItem('payment', JSON.stringify({ paymentMethod }));
   };
