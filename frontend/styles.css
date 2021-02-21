@@ -162,6 +162,10 @@ a:hover {
 }
 
 /*Button*/
+.btn, .delete-button, #logout-button, .back-button, button {
+    font-size: 15px !important;
+}
+
 button{
     cursor:pointer;
 }
@@ -587,11 +591,24 @@ button#checkout-button {
 /* Order */
 
 .order{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
     justify-content: space-between;
 }
+
+.order-info > div:first-child {
+margin-top: 0;
+padding: 5px;
+
+}
+.order-info > div:last-child {
+    margin-bottom: 0;
+    padding: 10px;
+    
+    
+    }
 
 .order h2 {
     margin: 0;
@@ -637,5 +654,6 @@ button#checkout-button {
 .order-action .total {
     font-size: 2rem;
     font-weight: bold;
-    color: var(--main-color);
+    color: #104982;
+    /* #2a4ec3 */
 }

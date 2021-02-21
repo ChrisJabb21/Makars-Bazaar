@@ -23,14 +23,14 @@ const HomeScreen = {
         <h1>Products</h1>
         <ul class="products">
             ${products.map((product) => `
-            <li onclick="location.href = '${clientUrl}#/product/${product.id}';">
+            <li onclick="location.href = '${clientUrl}#/product/${product._id}';">
                 <div class="product">
-                    <a href="/#/product/${product.id}">
+                    <a href="/#/product/${product._id}">
                         <img src="${product.image}" alt="${product.name}" />
                     </a>
                 </div>
                     <div class="product-name">
-                        <a href="/#/product/${product.id}">${product.name} </a>
+                        <a href="/#/product/${product._id}">${product.name} </a>
                     </div>
                     <div class="product-rating">
                     ${Rating.render({

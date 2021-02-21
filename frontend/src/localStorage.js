@@ -1,8 +1,9 @@
-
-
 export const clearUser = () => {
   localStorage.removeItem("userInfo");
 };
+export const clearCart = () => {
+    localStorage.removeItem('cartItems');
+}
 
 export const getCartItems = () => {
   const cartItems = localStorage.getItem("cartItems")
@@ -46,6 +47,7 @@ export const getShipping = () => {
   const shipping = localStorage.getItem('shipping')?JSON.parse(localStorage.getItem('shipping')) : {
         address: '',
         city: '',
+        state: '',
         postalCode: '',
         country: '',
       };
@@ -54,12 +56,13 @@ export const getShipping = () => {
 export const setShipping = ({
   address = '',
   city = '',
+  state = '',
   postalCode = '',
   country = '',
 }) => {
   localStorage.setItem(
     'shipping',
-    JSON.stringify({ address, city, postalCode, country})
+    JSON.stringify({ address, city, state, postalCode, country})
   );
 };
 

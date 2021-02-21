@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { getCartItems, setCartItems,  } from "../localStorage";
 import { getProduct } from "../productService";
 import { parseRequestUrl, rerender, formatter } from "../utils";
@@ -56,7 +57,7 @@ const CartScreen = {
         if (request.id) {
             const product = await getProduct(request.id);
             addToCart({
-                product: product.id,
+                product: product._id,
                 name: product.name,
                 image: product.image,
                 price: Number(product.price).toFixed(2),
