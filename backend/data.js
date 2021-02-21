@@ -1,7 +1,7 @@
 export default {
   products: [
     {
-      id: '1',
+      _id:'111111111111111111111111',
       name: 'Chocolate Coconut Bar',
       category: 'Snacks',
       image: './images/Bounty-Chocolate.jpg',
@@ -13,7 +13,7 @@ export default {
       description:' Two bars per pack. Imported from England. Bounty is a chocolate bar manufactured by Mars, Incorporated and sold internationally. It has a coconut filling covered with milk chocolate (sold in a blue wrapper).'
     },
     {
-      id: '2',
+      _id:'222222222222222222222222',
       name: 'Unica Wafers 24 count 28.5 oz.',
       category: 'Snacks',
       image: './images/Unica-Wafers.jpg',
@@ -25,7 +25,7 @@ export default {
       description:'A Middle Eastern snack people have loved since they were a kid. Made by the famous Gandour company in Lebanon, these crispy wafers are coated with a milky chocolate sensation.'
     },
     {
-      id: '3',
+      _id:'333333333333333333333333',
       name: 'Milk Chocolate 10 Bar Pack',
       category: 'Snacks',
       image: './images/Choceur-MilkChoc.jpg',
@@ -36,7 +36,7 @@ export default {
       countInStock: 65,
     },
     {
-      id: '4',
+      _id:'444444444444444444444444',
       name: 'French Baguette',
       category: 'Accessories',
       image: './images/BaguetteLARPWeapon.jpg',
@@ -48,7 +48,7 @@ export default {
     },
     /* Malachite Protection Source Pendant */
     {
-      id: '5',
+      _id:'555555555555555555555555',
       name: 'Malachite Protection Source Pendant',
       category: 'Accessories',
       image: './images/malachite-protection-source-pendant-pendants-862_1728x.jpg',
