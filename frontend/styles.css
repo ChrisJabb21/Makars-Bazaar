@@ -1,4 +1,3 @@
-
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -203,7 +202,6 @@ button, input{
     height: 50%;
     border-radius:10px;
     margin-bottom: 11px;
-
     }
 .btn a{
     color: white;
@@ -212,6 +210,7 @@ button, input{
 .delete-button, .btn-danger{
     padding:-5px;
     border-radius: 10px;
+    margin-top: -22px;
 
 }
 .delete-button{
@@ -589,6 +588,28 @@ button#checkout-button {
 }
 
 /* Order */
+.order-info > div > div {
+    padding: 1rem;
+
+}
+.order h2, h1 {
+    margin-left: 4rem;
+    margin-top: 2rem;
+    }
+    .order div {
+        margin-left:2rem;
+    }
+    .order h2 {
+        margin: 0;
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+    
+    .order-number  div{
+        margin-left:2rem;
+    }
+    
+
 
 .order{
     width: 100%;
@@ -610,11 +631,7 @@ padding: 5px;
     
     }
 
-.order h2 {
-    margin: 0;
-    padding-bottom: 1rem;
-    font-size: 2rem;
-}
+
 .order .cart-list-container {
     padding: 0;
 }

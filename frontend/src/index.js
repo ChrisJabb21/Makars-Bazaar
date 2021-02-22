@@ -3,18 +3,20 @@ import { hideLoading, parseRequestUrl, showLoading } from './utils';
 import CartScreen from './views/CartScreen';
 import Error404Screen from './views/Error404Screen';
 import HomeScreen from './views/HomeScreen';
-import ProductScreen from './views/ProductScreen';
-import SigninScreen from './views/SigninScreen';
-import RegisterScreen from './views/RegisterScreen';
-import ProfileScreen from './views/ProfileScreen';
-import ShippingScreen from './views/ShippingScreen';
+import OrderScreen from './views/OrderScreen';
 import PaymentScreen from './views/PaymentScreen';
 import PlaceOrderScreen from './views/PlaceOrderScreen';
+import ProductScreen from './views/ProductScreen';
+import ProfileScreen from './views/ProfileScreen';
+import RegisterScreen from './views/RegisterScreen';
+import ShippingScreen from './views/ShippingScreen';
+import SigninScreen from './views/SigninScreen';
 
 
 const routes = {
   '/': HomeScreen,
   '/product/:id': ProductScreen,
+  '/order/:id': OrderScreen,
   '/cart/:id': CartScreen,
   '/cart': CartScreen,
   '/signin': SigninScreen,

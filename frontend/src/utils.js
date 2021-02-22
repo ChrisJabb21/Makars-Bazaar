@@ -30,7 +30,6 @@ export const rerender = async (component) => {
 
 export const redirectUser = () => {
   if (getCartItems().length !== 0) {
-    console.log(getCartItems().length);
     document.location.hash = '/shipping';
   } else {
     document.location.hash = '/';
