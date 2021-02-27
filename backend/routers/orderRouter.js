@@ -31,4 +31,24 @@ expressAsyncHandler(async (req,res)  => {
     res.status(201).send({ message: 'New Order Created', order: createdOrder });
     })
 );
+
+orderRouter.put('/:id/pay', isAuth, expressAsyncHandler(async(req, res) => {
+    const order = await Order.findById(req.params.id);
+    if(order){
+        order.isPaid = true;
+        order.paidAt = Date.now();
+        order.payment.paymentResult = {
+            payerID: req.body.payerID,
+            paymentID: req.body.paymentID,
+            orderID: req.body.orderID,
+        };
+        const updatedOrder = await order.save();
+        res.send({ message: 'Order Paid', order: updatedOrder });
+    } else {
+        res.status(404).send({ message: 'Order not found!'})
+    }
+})
+
+);
+
 export default orderRouter;
