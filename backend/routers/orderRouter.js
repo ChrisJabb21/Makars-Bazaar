@@ -4,6 +4,15 @@ import Order from '../models/orderModel';
 import { isAuth } from '../util';
 
 const orderRouter = express.Router();
+/** Get all orders by user id */
+orderRouter.get('/myorders', isAuth,
+    expressAsyncHandler(async (req, res) => {
+      const orders = await Order.find({ user: req.user.id });
+      res.send(orders);
+    })
+);
+
+/** Get order by orderid */
 orderRouter.get('/:id', isAuth,
  expressAsyncHandler(async (req,res) =>{
     const order = await Order.findById(req.params.id);
@@ -14,6 +23,7 @@ orderRouter.get('/:id', isAuth,
     }
  })
 );
+
 orderRouter.post('/', 
 isAuth,
 expressAsyncHandler(async (req,res)  => {
