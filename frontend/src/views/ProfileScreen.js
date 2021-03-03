@@ -1,6 +1,7 @@
 import { clearUser, getUserInfo, setUserInfo } from "../localStorage";
+import { getMyOrders } from "../orderService";
 import { update } from "../userService";
-import { hideLoading, showLoading, showMessage } from "../utils";
+import { hideLoading, showLoading, showMessage, formatter } from "../utils";
 
 const ProfileScreen = {
   after_render: () => {
@@ -28,14 +29,17 @@ const ProfileScreen = {
         }
     });
   },
-  render: () => {
-      const {firstname, lastname, email} = getUserInfo();
-        if(!firstname)
-        {
-            document.location.hash = '/';
-        }
+  render: async () => {
+    const {firstname, lastname, email} = getUserInfo();
+    if(!firstname)
+    {
+        document.location.hash = '/';
+    }
+    const orders = await getMyOrders();
     return `
-        <div class="form-container">
+        <div class="profile">
+          <div class="profile-info">
+           <div class="form-container">
             <form id="profile-form">
                 <ul class="form-items">
                     <li>
@@ -65,7 +69,42 @@ const ProfileScreen = {
                     </li>
                 </ul>
             </form>
-        </div>`
+        </div>
+          </div>
+          <div class="content profile-orders">
+          <h2>Order History</h2>
+            <table>
+              <thead>
+                 <tr>
+                   <th>ORDER ID</th>
+                   <th>ORDER DATE</th>
+                   <th>ORDER TOTAL</th>
+                   <th>ORDER PAID</th>
+                   <th>ORDER DELIVERED</th>
+                   <th>ACTIONS</th>
+                 </tr>
+              </thead>
+              <tbody>
+                ${
+            orders.length === 0 
+                ? `<tr><td colspan="6">No Orders found.</tr>`
+                : orders.map( (order) => `
+                <tr>
+                   <td>${order._id}</td>
+                   <td>${String(new Date(order.createdAt)).substring(0,25)}</td>
+                   <td>${formatter.format(order.totalPrice)}</td>
+                   <td>${order.paidAt || 'No'} </td>
+                   <td>${order.deliveryAt || 'No'}</td>
+                   <td><a href="/#/order/${order._id}">Details</a></td>
+                </tr>
+                `    ).join('\n')
+            }
+              </tbody>
+              </table>
+          </div>
+        </div>
+
+       `;
     },
 };
 export default ProfileScreen;

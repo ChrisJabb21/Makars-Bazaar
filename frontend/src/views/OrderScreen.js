@@ -102,7 +102,7 @@ const OrderScreen = {
                     </div>
                     ${
                       isDelivered
-                        ? `<div class="success">Delivered at ${deliveredAt}</div>`
+                        ? `<div class="success">Delivered at ${new Date(deliveredAt)}</div>`
                         : `<div class="error"> Not delivered</div>`
                     }
 
@@ -112,24 +112,20 @@ const OrderScreen = {
             <h2>Payment</h2>
             <div>
             Payment Method : ${payment.paymentMethod}
-         
             </div>
             ${
               isPaid
-                ? `<div class="success">Paid at ${paidAt}</div>`
+                ? `<div class="success">Paid at ${new Date(paidAt)}</div>`
                 : `<div class="error"> Not paid</div>`
             }
             </div>
-       
-            </div>
-        <div>
+            <div>
           <ul class="cart-list-container">
             <li>
                 <h2>Shopping Cart</h2>
                 <div>Price</div>
             </li>
-            ${orderItems
-              .map(
+            ${orderItems.map(
                 (item) => `
                     <li>
                     <div class="cart-image">
@@ -143,11 +139,10 @@ const OrderScreen = {
                         </div>
                         <div class ="cart-price"> $${item.price}</div>
                     </li>
-                        `
-              )
-              .join("\n")}
+                        `).join("\n")}
             </ul>
         </div>
+    </div>        
     </div>
     <div class="order-action">
         <ul>
