@@ -36,6 +36,11 @@
   
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+  .fw {
+      width: 100%;
+      margin: auto;
+  }
+
 
 /*Header*/
 header{
@@ -54,26 +59,26 @@ header{
 header a {
     color: #ffffff;
     display: inline-block;
-    font-weight: bold;
     text-decoration: none;
     padding: 0.9rem 0.7rem;
 }
 
 header a:hover {
     color:white;
-    font-weight: bold;
     text-decoration: none;
     border: 1px solid #d0d0d0;
 }
 .logo {
     font-size: 19px;
     float: left;
+    font-weight: bold;
 }
 .logo img{
     width: 100px;
     height:50px;
 }
 .brand a{
+    font-weight: bold;
     font-size: 3rem;
 }
 .navbar{
@@ -122,7 +127,7 @@ html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-.h2, h2 {
+ h2 {
     font-size: 2rem;
     font-weight: bold;
 }
@@ -133,7 +138,7 @@ body{
 }
 h1{
     font-weight: bold !important;
-    padding:5px;
+    padding:11px;
 }
 
 
@@ -141,11 +146,14 @@ h3 {
     font-weight: bold !important;
     padding: 19px;
 }
-
-a{
+.products a {
     color: black;
     text-decoration: none;
 }
+ .cart-list-container a{
+    color: black;
+} 
+
 a:hover {
     color:var(--main-color);
 }
@@ -335,6 +343,7 @@ button.disabled {
 
 .content {
     padding:1rem;
+    margin-top:2rem;
 }
 
 .details {
@@ -356,6 +365,7 @@ flex-wrap: wrap;
 }
 .details-info, .details-action{
     flex: 1 1 30rem;
+    margin: 1rem;
 
 }
 .details-info ul, .details-action ul {
@@ -592,12 +602,18 @@ button#checkout-button {
     padding: 1rem;
 
 }
-.order h2, h1 {
+ .order > h1 {
     margin-left: 4rem;
     margin-top: 2rem;
     }
     .order div {
         margin-left:2rem;
+    }
+    #paypal div{
+        float:left;
+        margin:0;
+        padding:0;
+        margin-left: 1rem;
     }
     .order h2 {
         margin: 0;
@@ -673,4 +689,94 @@ padding: 5px;
     font-weight: bold;
     color: #104982;
     /* #2a4ec3 */
+}
+
+.paypal-button-container {
+    min-width: 500px;
+    max-width: 750px;
+    font-size: 22px;
+}
+
+.paypal-button .paypal-button-label-container .paypal-button-text 
+{
+    margin-top: 0;
+}
+
+
+/* Profile */
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.profile-info{
+    flex: 1 1 20rem;
+}
+.profile-orders{
+    flex: 3 1 60rem;
+    margin-left: 1rem;
+}
+
+table{
+    width: 100%;
+}
+th {
+    text-align: left;
+}
+tbody > tr:nth-child(odd){
+    background-color: #c0c0c0;
+}
+td{
+    padding: 0.5rem;
+}
+.profile a:link { color:  mediumblue/*#219*/; }
+
+
+.profile a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+/* Dashboard */
+.dashboard{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.dashboard h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+.dashboard-menu{
+    flex: 1 1 20rem;
+    background-color: #f0f0f0;
+}
+.dashboard-menu ul{
+    padding:0;
+}
+
+.dashboard-menu a{
+    display: flex;
+    padding: 1rem;
+    padding-left:2rem;
+    justify-content: space-between;
+}
+.dashboard-menu a:hover{
+    background-color: #c0c0c0;
+    color: #c04040;
+}
+.dashboard-menu li.selected a {
+    color: #c04040;
+    background-color: #c0c0c0;
+}
+.dashboard-content{
+    flex: 4 1 80rem;
+    padding: 1rem;
+}
+.dashboard-content > div {
+    padding-left: 0.5rem;
 }
