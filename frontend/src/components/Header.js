@@ -2,7 +2,7 @@ import { getUserInfo } from "../localStorage";
 
 const Header = {
     render: () => {
-        const { firstname } = getUserInfo();
+        const { firstname, isAdmin } = getUserInfo();
         return `
     <div class="logo">
         <a href="/#/">Makar's Bazaar</a>
@@ -26,10 +26,10 @@ const Header = {
     </div>
         <a href="/#/cart">Cart <i class="fa fa-shopping-cart" style="font-size:12px"></i>
         </a>
+        ${isAdmin ? `<a href="/#/dashboard">Dashboard</a>` : ''}
+
 </div>
-    <!-- <Button class="toggle-collapse">
-        <i class="fas fa-bars"></i>
-    </Button> -->`;
+    `;
     },
      after_render: () => {
 },

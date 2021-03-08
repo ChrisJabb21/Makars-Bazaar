@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import { hideLoading, parseRequestUrl, showLoading } from './utils';
 import CartScreen from './views/CartScreen';
+import DashboardScreen from './views/DashboardScreen';
 import Error404Screen from './views/Error404Screen';
 import HomeScreen from './views/HomeScreen';
 import OrderScreen from './views/OrderScreen';
@@ -24,7 +25,8 @@ const routes = {
   '/profile': ProfileScreen,
   '/shipping': ShippingScreen,
   '/payment': PaymentScreen,
-  '/placeorder': PlaceOrderScreen
+  '/placeorder': PlaceOrderScreen,
+  '/dashboard': DashboardScreen
 };
 /**
  * router method for URL routing and parsing
