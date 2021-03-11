@@ -36,11 +36,6 @@
   
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-  .fw {
-      width: 100%;
-      margin: auto;
-  }
-
 
 /*Header*/
 header{
@@ -120,22 +115,27 @@ header a:hover {
 * {
 box-sizing: border-box;
 }
+
 :root {
     --main-color: #203040;
 }
+
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
- h2 {
+
+h2 {
     font-size: 2rem;
     font-weight: bold;
 }
+
 body{
     height: 100vh;
     font: 1.6rem Helvetica, Arial;
     margin: 0;
 }
+
 h1{
     font-weight: bold !important;
     padding:11px;
@@ -169,8 +169,18 @@ a:hover {
 }
 
 /*Button*/
-.btn, .delete-button, #logout-button, .back-button, button {
+/*.delete-button*/
+.btn, #logout-button, .back-button, button {
     font-size: 15px !important;
+ }
+.fw {
+    width: 100%;
+    margin: auto;
+  }
+
+.cart .delete-button {
+    height: 3.5rem;
+    width: 25rem;
 }
 
 button{
@@ -207,7 +217,7 @@ button, input{
     color: white;
     border: blue 1px;
     width: 50%;
-    height: 50%;
+  /* height: 50%; */
     border-radius:10px;
     margin-bottom: 11px;
     }
@@ -218,10 +228,13 @@ button, input{
 .delete-button, .btn-danger{
     padding:-5px;
     border-radius: 10px;
-    margin-top: -22px;
+    /* margin-top: -22px; */
 
 }
-.delete-button{
+.btn-primary{
+   border-radius: 10px; 
+}
+.cart > .delete-button{
     max-width: 50%;
 }
 /*Footer*/
@@ -570,12 +583,9 @@ button {
 }
 /* Checkout  */
 button#checkout-button {
-    width: 50% !important;
+    width: 100%;
     margin-bottom: 14px;
-    /* padding: 1rem; */
-    /* height: 40px; */
 }
-
 
 .checkout-steps {
     display: flex;
@@ -591,8 +601,6 @@ button#checkout-button {
     padding-top: 1rem;
 }
 .checkout-steps > div.active {
-    /* color: #f08000;
-    border-top-color: #f08000; */
     color: var(--main-color);
     border-top-color: var(--main-color);
 }
@@ -625,8 +633,6 @@ button#checkout-button {
         margin-left:2rem;
     }
     
-
-
 .order{
     width: 100%;
     display: flex;
@@ -638,15 +644,12 @@ button#checkout-button {
 .order-info > div:first-child {
 margin-top: 0;
 padding: 5px;
-
 }
+
 .order-info > div:last-child {
     margin-bottom: 0;
     padding: 10px;
-    
-    
-    }
-
+}
 
 .order .cart-list-container {
     padding: 0;
@@ -727,7 +730,7 @@ th {
     text-align: left;
 }
 tbody > tr:nth-child(odd){
-    background-color: #c0c0c0;
+    background-color: gainsboro;
 }
 td{
     padding: 0.5rem;
@@ -779,4 +782,19 @@ td{
 }
 .dashboard-content > div {
     padding-left: 0.5rem;
+}
+
+/*Product List*/
+.product-list button{
+    font-size: 1.3rem;
+    padding: 0.5rem;
+}
+.tr-action {
+    width: 1rem;
+}
+
+button#create-product-button.btn-primary.btn{
+    width: 24rem;
+    height: 4rem;
+    margin-left: 0.5rem;
 }
