@@ -40,11 +40,8 @@ expressAsyncHandler(async (req,res)  => {
             password: signinUser.password,
             isAdmin: signinUser.isAdmin,
             token: generateToken(signinUser),
-
         })
-
     }
-
 }));
 
 userRouter.post('/register', 
