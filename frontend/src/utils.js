@@ -17,7 +17,7 @@ export const parseRequestUrl = () => {
   return {
     resource: request[1],
     id: request[2],
-    action: request[3],
+    verb: request[3],
   };
 };
 
@@ -65,5 +65,4 @@ export const showMessage = (message, callback) => {
 export const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-    // minimumFractionDigits: 2
   });
