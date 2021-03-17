@@ -1,8 +1,14 @@
-# JS Ecommerce app 
+# Makar's Bazaar 
 
-Full-stack Ecommerce web app made with Vanilla JavaScript for the frontend, with NodeJS and MongoDB for the backend. 
+Full-stack JS Ecommerce web app made with Vanilla JavaScript for the frontend, with NodeJS and MongoDB for the backend.
 
-Root directory contains package.json configuration needed to run the node backend. Frontend subdirectory has the package.json for running the frontend.
+# Showcase 
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="60%" alt="screenshot of products storefront" src="frontend\images\sampleproductspreview.png">
+|<img width="60%"  alt="screenshot of shopping" src="frontend\images\Makar'sBazaarshoppingcartpreview.png"> |
+|<img width="60%" alt="screenshot of place order progress bar" src="frontend\images\MakarsBazaarplaceorder.png"> | 
 
 ## Technologies used
 ---
@@ -10,19 +16,38 @@ Root directory contains package.json configuration needed to run the node backen
 - JavaScript
     - Webpack
     - Babel
-    - ESlint (code linter to help find code syntax problems faster)
-    - Prettier 
+    - ESlint (code linter to help find code syntax problems faster and enforce best practices or code quality standards)
+    - Prettier (code formatter)
 - NodeJS
+- Express
 - MongoDB
+    - Mongoose
+- Paypal payment API integration [Click here](https://developer.paypal.com/developer/applications).
+
+- JSON Web Token
+
 --- 
 
 
+## Features
+ - Two parts of ecommerce app
+    1. Store side of app with products to browse and purchase (user and guest)
+    2. Admin dashboard section for adding, updating products and viewing all orders placed and ecommerce logistics. (if admin logged in) 
+ - User account customization with login and registration
+ - Shopping cart functionality  
+ - Order History for each user with payment details and status.   
+ - Progress indicator component for cart checkout steps
+--- 
 ## Entire Project Structure 
+
+Root directory contains package.json configuration needed to run the node backend. Frontend subdirectory has the package.json for running the frontend.
+
 ```
 ──root 
     ├──.gitignore
     ├──.babelrc
     ├──.eslintrc.js
+    ├──.env
     ├──README.md
     ├─── package.json
     ├───backend/
@@ -30,10 +55,8 @@ Root directory contains package.json configuration needed to run the node backen
     └────node_modules/
 ```
 
-# Frontend
-## Project Structure 
-Directory layout displayed with the ``` tree ``` in Linux and/or Windows command prompt in root project directory.
-
+## Frontend 
+Directory layout displayed with the ``` tree ``` command in Linux/Unix or Windows command prompt in root project directory.
 ```
 ──frontend
     ├───node_modules
@@ -41,14 +64,15 @@ Directory layout displayed with the ``` tree ``` in Linux and/or Windows command
         ├───images
         ├───components
         │   └─── Rating.js
+        |        ...
         |
         ├───views
         │   ├─── HomeScreen.js
         │   ├─── ProductScreen.js
         │   └─── Error404Screen.js
+        |        ...
         │
         ├─── index.js
-        ├─── data.js
         ├─── package.json
         ├─── index.html
         └─── styles.css
