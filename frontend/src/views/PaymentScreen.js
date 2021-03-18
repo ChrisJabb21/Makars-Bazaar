@@ -6,6 +6,8 @@ import {
 
 const PaymentScreen = {
   after_render: () => {
+    document.getElementById("stripe").disabled = true;
+
     document
       .getElementById("payment-form")
       .addEventListener("submit", async (e) => {
@@ -45,9 +47,9 @@ const PaymentScreen = {
                 <input type="radio"
                 name="payment-method" 
                 id="stripe" 
-                value="Stripe" 
+                value="Stripe" class="btn-danger disabled" 
                  />
-                <label for="stripe">Stripe</label>
+                <label for="stripe">Stripe (Coming soon)</label>
                 </div>
             </li>
                 <li>
