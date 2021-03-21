@@ -5,13 +5,25 @@ import { isAdmin, isAuth } from '../util';
 
 const productRouter = express.Router();
 
+// For test data in data.js
 productRouter.get(
   '/', 
   expressAsyncHandler(async (req, res) => {
   const products = await Product.find({});
   res.send(products);
+  // res.send(data.products);
   })
 );
+
+// app.get('/api/products/:id', (req, res) => {
+//   const product = data.products.find((x) => x._id === req.params.id);
+//   if (product) {
+//     res.send(product); 
+//   } else {
+//     res.status(404).send({ message: 'Product Not Found!'});
+//   }
+// });
+
 productRouter.get(
   '/:id', 
   expressAsyncHandler(async(req, res) => {
