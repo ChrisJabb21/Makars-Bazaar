@@ -4,6 +4,7 @@ import CartScreen from './views/CartScreen';
 import DashboardScreen from './views/DashboardScreen';
 import Error404Screen from './views/Error404Screen';
 import HomeScreen from './views/HomeScreen';
+import OrderListScreen from './views/OrderListScreen';
 import OrderScreen from './views/OrderScreen';
 import PaymentScreen from './views/PaymentScreen';
 import PlaceOrderScreen from './views/PlaceOrderScreen';
@@ -30,7 +31,8 @@ const routes = {
   '/payment': PaymentScreen,
   '/placeorder': PlaceOrderScreen,
   '/dashboard': DashboardScreen,
-  '/productlist': ProductListScreen
+  '/productlist': ProductListScreen,
+  '/orderlist': OrderListScreen
 };
 /**
  * router method for URL routing and parsing

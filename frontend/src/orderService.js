@@ -5,7 +5,26 @@ import { getUserInfo } from "./localStorage";
 /* Backend api endpoint mappings */
 
 /* Order api mappings */
-
+export const getOrders = async () => {
+  try {
+    const { token } = getUserInfo();
+    const response = await axios({
+      url: `${apiUrl}/api/orders`,
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+         Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.statusText !== 'OK') {
+      throw new Error(response.data.message);
+    }
+    return response.data;
+  } catch (err) {
+    console.log(err);
+    return { error: err.response.data.message || err.message };
+  }
+};
 export const createOrder = async (order) => {
   try {
     const { token } = getUserInfo();
@@ -99,4 +118,25 @@ export const payOrder = async(orderId, paymentResult) => {
   } catch(err){
     return { error: err.response ? err.response.data.message : err.message };
   } 
+};
+
+export const deleteOrder = async (orderId) => {
+  try {
+    const { token } = getUserInfo();
+    const response = await axios({
+      url: `${apiUrl}/api/orders/${orderId}`,
+      method: 'DELETE',
+      headers: { 
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    if (response.statusText !== 'OK') {
+      throw new Error(response.data.message);
+    }
+    return response.data;
+  } catch (err) {
+    console.log(err);
+    return { error: err.response.data.message || err.message };
+  }
 };
