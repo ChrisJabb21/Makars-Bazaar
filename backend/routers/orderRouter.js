@@ -1,7 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Order from '../models/orderModel';
-import { isAuth } from '../util';
+import { isAdmin, isAuth } from '../util';
 
 const orderRouter = express.Router();
 /** Get all orders by user id */
@@ -11,8 +11,14 @@ orderRouter.get('/myorders', isAuth,
       res.send(orders);
     })
 );
-
-/** Get order by orderid */
+/* Get all placed orders */
+orderRouter.get('/', isAuth,isAdmin,
+    expressAsyncHandler(async (req, res) => {
+      const orders = await Order.find({}).populate('user');
+      res.send(orders);
+    })
+);
+/** Get order by id */
 orderRouter.get('/:id', isAuth,
  expressAsyncHandler(async (req,res) =>{
     const order = await Order.findById(req.params.id);
@@ -60,5 +66,15 @@ orderRouter.put('/:id/pay', isAuth, expressAsyncHandler(async(req, res) => {
 })
 
 );
-
+orderRouter.delete('/:id', isAuth,isAdmin, 
+expressAsyncHandler(async(req, res) => {
+  const order = await Order.findById(req.params.id);
+    if(order){
+      const deletedOrder = await order.remove();
+      res.send({ message: 'Order Deleted', order: deletedOrder });
+    } else {
+      res.status(404).send({ message: 'Order Not Found'});
+    }
+  })
+);
 export default orderRouter;
