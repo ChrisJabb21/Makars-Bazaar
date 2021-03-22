@@ -94,7 +94,7 @@ const ProfileScreen = {
                    <td>${String(new Date(order.createdAt)).substring(0,25)}</td>
                    <td>${formatter.format(order.totalPrice)}</td>
                    <td>${order.paidAt || 'No'} </td>
-                   <td>${order.deliveryAt || 'No'}</td>
+                   <td>${order.deliveredAt || 'No'}</td>
                    <td><a href="/#/order/${order._id}">Details</a></td>
                 </tr>
                 `    ).join('\n')
