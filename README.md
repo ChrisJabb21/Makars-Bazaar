@@ -4,11 +4,11 @@ Full-stack JS Ecommerce web app made with Vanilla JavaScript for the frontend, w
 
 # Showcase 
 
-| | | |
-|:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="60%" alt="screenshot of products storefront" src="frontend\images\sampleproductspreview.png">
-|<img width="60%"  alt="screenshot of shopping" src="frontend\images\Makar'sBazaarshoppingcartpreview.png"> |
-|<img width="60%" alt="screenshot of place order progress bar" src="frontend\images\MakarsBazaarplaceorder.png"> | 
+| Images | 
+| :-------------: | 
+| <img width="60%" alt="screenshot of products storefront" src="frontend\images\sampleproductspreview.png"> |
+| <img width="60%" alt="screenshot of shopping cart" src="frontend\images\Makar'sBazaarshoppingcartpreview.png">  |
+| <img width="60%" alt="screenshot of order processing and progress bar component" src="frontend\images\MakarsBazaarplaceorder.png"> |
 
 ## Technologies used
 ---
