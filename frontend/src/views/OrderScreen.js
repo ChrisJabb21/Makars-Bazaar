@@ -1,4 +1,5 @@
-import { getOrder, getPaypalClientId, payOrder } from "../orderService";
+import { getUserInfo } from "../localStorage";
+import { deliverOrder, getOrder, getPaypalClientId, payOrder } from "../orderService";
 import { formatter, hideLoading, parseRequestUrl, rerender, showLoading, showMessage } from "../utils";
 
 const addPaypalSdk = async (totalPrice) => {
@@ -65,8 +66,22 @@ const handlePayment = (clientId, totalPrice) => {
   });
 };
 const OrderScreen = {
-  after_render: async () => {},
+  after_render: async () => {
+    const request = parseRequestUrl();
+    const el = document.getElementById('deliver-order-button');
+if (el){
+    document.getElementById('deliver-order-button')
+    .addEventListener('click', async () => {
+      showLoading();
+      await deliverOrder(request.id);
+      hideLoading();
+      showMessage('Order Delivered.');
+      rerender(OrderScreen);
+    });
+  }
+  },
   render: async () => {
+    const {isAdmin} = getUserInfo();
     const request = parseRequestUrl();
     const {
       _id,
@@ -102,7 +117,7 @@ const OrderScreen = {
                     </div>
                     ${
                       isDelivered
-                        ? `<div class="success">Delivered at ${new Date(deliveredAt)}</div>`
+                        ? `<div class="success">Delivered on ${new Date(deliveredAt)}</div>`
                         : `<div class="error"> Not delivered</div>`
                     }
 
@@ -115,7 +130,7 @@ const OrderScreen = {
             </div>
             ${
               isPaid
-                ? `<div class="success">Paid at ${new Date(paidAt)}</div>`
+                ? `<div class="success">Paid on ${new Date(paidAt)}</div>`
                 : `<div class="error"> Not paid</div>`
             }
             </div>
@@ -159,9 +174,14 @@ const OrderScreen = {
                 totalPrice
               )}</div>
               </li>
+              <li><div class="fw" id="paypal-button"></div></li>
               <li>
-              <div class="fw" id="paypal-button"></div></li>
-              <li>
+              ${
+                isPaid && !isDelivered && isAdmin 
+                  ? `<button id="deliver-order-button" class="btn btn-primary fw"> Confirm Order Delivered </button>`
+                  : ''
+              }
+              </li>
         </div>
     </div>
 </div>

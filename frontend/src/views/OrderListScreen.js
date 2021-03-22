@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 
 import DashboardMenu from "../components/DashboardMenu";
-import { createOrder, deleteOrder, getOrders } from "../orderService";
+import { deleteOrder, getOrders } from "../orderService";
 import { formatter, hideLoading, rerender, showLoading, showMessage } from "../utils";
 
 const OrderListScreen = {
@@ -22,6 +22,12 @@ const OrderListScreen = {
         }
       });
     });
+const editButtons = document.getElementsByClassName('edit-button');
+  Array.from(editButtons).forEach((editButton) => {
+      editButton.addEventListener('click', async() => {
+        document.location.hash = `/order/${editButton.id}/`; 
+      });
+    });
   },
   render: async () => {
     const orders = await getOrders(); 
@@ -39,7 +45,7 @@ const OrderListScreen = {
                 <th>TOTAL</th>
                 <th>USER</th>
                 <th>EMAIL</th>
-                <th>PAID AT</th>
+                <th>PAID</th>
                 <th>DELIVERED</th>
                 <th class="tr-action">ACTION</th>
               </tr>
@@ -54,7 +60,6 @@ const OrderListScreen = {
                 <td>${formatter.format(order.totalPrice)}</td>
                 <td>${String(order.user.firstname)} ${String(order.user.lastname)}</td>
                 <td>${order.user.email}</td>
-
                 <td>${order.paidAt || 'No'}</td>
                 <td>${order.deliveredAt || 'No'}</td>
                 <td><button id="${order._id}" class="btn-primary edit-button">Edit</button> 
