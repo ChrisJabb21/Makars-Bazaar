@@ -803,8 +803,8 @@ td{
     padding-left: 0.5rem;
 }
 
-/*Product List*/
-.product-list button{
+/* Admin Product List*/
+.product-list button, .order-list button{
     font-size: 1.3rem;
     padding: 0.5rem;
 }
