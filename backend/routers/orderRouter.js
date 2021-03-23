@@ -1,9 +1,34 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Order from '../models/orderModel';
+import User from '../models/userModel';
 import { isAdmin, isAuth } from '../util';
 
 const orderRouter = express.Router();
+
+orderRouter.get('/summary', isAuth,isAdmin,
+    expressAsyncHandler(async (req, res) => {
+      const orders = await Order.aggregate([
+        {
+          $group: {
+            _id: null,
+            numOrders: { $sum:1 },
+            totalSales: { $sum:'$totalPrice' },
+          },
+        },
+      ]);
+      const users = await User.aggregate([
+        {
+          $group: {
+            _id: null,
+            numUsers: { $sum: 1 },
+          },
+        },
+      ]);
+      res.send({ users, orders });
+    })
+);
+
 /** Get all orders by user id */
 orderRouter.get('/myorders', isAuth,
     expressAsyncHandler(async (req, res) => {
@@ -89,4 +114,7 @@ expressAsyncHandler(async(req, res) => {
     }
   })
 );
+
+
+
 export default orderRouter;
