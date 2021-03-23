@@ -20,5 +20,6 @@ module.exports = {
     'no-unused-vars': 0,
     'arrow-body-style': 0 ,
     'no-underscore-dangle': 0,
+    'no-new': 0,
   },
 };

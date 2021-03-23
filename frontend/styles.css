@@ -845,3 +845,26 @@ button#create-product-button.btn-primary.btn {
 .summary-title.color3{
     background-color: #e0e0f0;
 }
+
+.charts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.charts > div {
+  flex: 1;
+}
+
+text.ct-label {
+  font-size: 0.9rem;
+}
+
+.ct-label {
+  fill: rgb(21, 0, 1) !important;
+  /* fill: rgba(0,0,0,.4); */
+  /* color: rgba(0,0,0,.4); */
+  font-size: .75rem;
+  line-height: 1;
+}
+
+/*maybe apply a flex to both charts */
