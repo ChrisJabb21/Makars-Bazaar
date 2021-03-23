@@ -1,5 +1,5 @@
 import { getUserInfo, setUserInfo } from "../localStorage";
-import { signin } from "../userService";
+import { signin } from "../api/userService";
 import { hideLoading, redirectUser, showLoading, showMessage } from "../utils";
 
 const SigninScreen = {

@@ -1,6 +1,6 @@
 import CheckoutSteps from "../components/CheckoutSteps";
 import { getCartItems, getPayment, getShipping, clearCart } from "../localStorage";
-import { createOrder } from "../orderService";
+import { createOrder } from "../api/orderService";
 import { formatter, hideLoading, showLoading, showMessage } from "../utils";
 
 const convertCartToOrder = () => {

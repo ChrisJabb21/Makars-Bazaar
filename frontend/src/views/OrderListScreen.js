@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 
 import DashboardMenu from "../components/DashboardMenu";
-import { deleteOrder, getOrders } from "../orderService";
+import { deleteOrder, getOrders } from "../api/orderService";
 import { formatter, hideLoading, rerender, showLoading, showMessage } from "../utils";
 
 const OrderListScreen = {

@@ -1,7 +1,7 @@
 import axios from "axios";
-import { apiUrl } from "./config";
-import { getUserInfo } from "./localStorage";
-import { hideLoading } from "./utils";
+import { apiUrl } from "../config";
+import { getUserInfo } from "../localStorage";
+import { hideLoading } from "../utils";
 
 export const createProduct = async() => {
   try {

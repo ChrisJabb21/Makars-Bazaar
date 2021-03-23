@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { getCartItems, setCartItems,  } from "../localStorage";
-import { getProduct } from "../productService";
-import { parseRequestUrl, rerender, formatter } from "../utils";
+import { getProduct } from "../api/productService";
+import { parseRequestUrl, rerender } from "../utils";
 
 const addToCart = (item, forceUpdate = false) => {
     let cartItems = getCartItems();

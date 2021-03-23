@@ -1,4 +1,4 @@
-import { getProduct, updateProduct, uploadProductImage } from "../productService";
+import { getProduct, updateProduct, uploadProductImage } from "../api/productService";
 import { hideLoading, parseRequestUrl, showLoading, showMessage } from "../utils";
 
 const ProductEditScreen = {

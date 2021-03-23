@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
 import DashboardMenu from "../components/DashboardMenu";
-import { createProduct, deleteProduct, getProducts } from "../productService";
+import { createProduct, deleteProduct, getProducts } from "../api/productService";
 import { hideLoading, rerender, showLoading, showMessage } from "../utils";
 
 const ProductListScreen = {

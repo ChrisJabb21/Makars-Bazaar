@@ -1,6 +1,6 @@
 import Rating from '../components/Rating';
 import { clientUrl } from '../config';
-import { getProducts } from '../productService';
+import { getProducts } from '../api/productService';
 import { showLoading } from '../utils';
 
 /** view for displaying all products to browse */

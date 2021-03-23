@@ -1,5 +1,5 @@
 import Rating from "../components/Rating";
-import { getProduct } from "../productService";
+import { getProduct } from "../api/productService";
 import { hideLoading, parseRequestUrl, showLoading } from "../utils";
 import { clientUrl } from '../config';
 
