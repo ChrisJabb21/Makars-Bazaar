@@ -12,7 +12,7 @@ const Header = {
 </div>
  <div class="search">
         <form class="search-form"  id="search-form">
-          <input placeholder= "search product here.." type="text" name="q" id="q" value="${
+          <input placeholder= "Search product here.." type="text" name="q" id="q" value="${
             value || ''
           }" /> 
           <button type="submit"><i class="fa fa-search"></i></button>
