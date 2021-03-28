@@ -1,4 +1,4 @@
-import { hideLoading, showLoading } from "../utils";
+import { hideLoading, showLoading } from '../utils';
 /**
  * Screen view that invokes a
  * function that renders a 404 response
