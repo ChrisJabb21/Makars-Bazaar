@@ -2,7 +2,7 @@
  *  utility functions module for routing functionality and miscellaneous helper functions
  */
 
-import { getCartItems } from "./localStorage";
+import { getCartItems } from './localStorage';
 
 /**
  * Method to get and analyze a Request URL and
@@ -12,18 +12,29 @@ import { getCartItems } from "./localStorage";
  * ['', "resource", "id", "action"]
  * */
 export const parseRequestUrl = () => {
-  const url = document.location.hash.toLowerCase();
-  const request = url.split("/");
+  const url = document.location.hash.slice(1).split('?')[0];
+  const address = url.toLowerCase() || '/';
+  const request = address.split('/');
+    const queryString =
+    document.location.hash.slice(1).split('?').length === 2
+      ? document.location.hash.slice(1).split('?')[1]
+      : '';
+      
+      
+      const query = queryString.split('=');
+
   return {
     resource: request[1],
     id: request[2],
     verb: request[3],
+    name: query[0],
+    value: query[1]
   };
 };
 
 export const rerender = async (component) => {
   document.getElementById(
-    "main-container"
+    'main-container'
   ).innerHTML = await component.render();
   await component.after_render();
 };
@@ -37,25 +48,25 @@ export const redirectUser = () => {
 };
 
 export const showLoading = () => {
-  document.getElementById("loading-overlay").classList.add("active");
+  document.getElementById('loading-overlay').classList.add('active');
 };
 
 export const hideLoading = () => {
-  document.getElementById("loading-overlay").classList.remove("active");
+  document.getElementById('loading-overlay').classList.remove('active');
 };
 
 export const showMessage = (message, callback) => {
-  document.getElementById("message-overlay").innerHTML = `
+  document.getElementById('message-overlay').innerHTML = `
   <div>
     <div id='message-overlay-content'>${message}</div>
     <button id="message-overlay-close-button">Ok</button>
   </div>
   `;
-  document.getElementById("message-overlay").classList.add("active");
+  document.getElementById('message-overlay').classList.add('active');
   document
     .getElementById('message-overlay-close-button')
     .addEventListener('click', () => {
-      document.getElementById("message-overlay").classList.remove("active");
+      document.getElementById('message-overlay').classList.remove('active');
       if (callback) {
         callback();
       }
